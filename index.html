@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .header-section {
+        background-image: url("/image1/anh.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 60px 20px;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .header-overlay {
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 700px;
+        margin: auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-overlay h1 {
+        margin: 0;
+        color: #193fca;
+        text-align: center;
+        font-size: 2em;
+      }
+
+      .header-overlay input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .faq-container {
+        max-width: 700px;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-section {
+        border: 2px solid #193fca;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        background: white;
+        overflow: hidden;
+      }
+
+      .section-header {
+        background: #193fca;
+        color: white;
+        padding: 12px;
+        font-size: 1.2em;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .section-content {
+        display: none;
+        padding: 10px;
+      }
+
+      .faq-item {
+        border: 1px solid #db181d;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        background: #fff;
+      }
+
+      .question {
+        cursor: pointer;
+        border: 1px solid #db181d;
+        background: rgb(252, 198, 198);
+        color: #a40000;
+        padding: 12px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+      }
+
+      .answer {
+        display: none;
+        padding: 10px;
+        background: #f9f9f9;
+        border-left: 3px solid #193fca;
+        border-radius: 0 0 5px 5px;
+      }
+
+      .icon {
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-section">
+      <div class="header-overlay">
+        <h1>Frequently Asked Questions</h1>
+        <input
+          type="text"
+          id="search"
+          placeholder="Search FAQs..."
+          onkeyup="filterQuestions()"
+        />
+      </div>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-section">
+        <div class="section-header" onclick="toggleSection(this)">
+          <span
+            >General Questions
+            <span style="font-size: 0.9em; opacity: 0.7"
+              >(Thông tin chung)</span
+            >
+          </span>
+          <i class="fas fa-plus icon"></i>
+        </div>
+        <div class="section-content">
+          <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+              <span>
+                What are the working hours of this department? Are you open on
+                weekends or public holidays? <br />
+                <span style="font-size: 0.9em; opacity: 0.7; margin-top: 8px">
+                  Giờ làm việc của khoa này là khi nào? Khoa có mở cửa vào cuối
+                  tuần hoặc các ngày lễ không?
+                </span>
+              </span>
+              <i class="fas fa-plus icon"></i>
+            </div>
+            <div class="answer">
+              Working hour:<br />
+              - Mon – Fri: 6h30-12h00 and 13h30-16h30<br />
+              - Sat: 6h30-12h00<br />
+              We are not open on Sundays and public holidays.
+              <p style="font-size: 0.9em; opacity: 0.7; margin-top: 8px">
+                Giờ làm việc:<br />
+                - Thứ 2 – Thứ 6 : 6h30-12h00 và 13h30-16h30<br />
+                - Thứ 7: 6h30-12h00<br />
+                Chúng tôi không mở cửa vào Chủ nhật và các ngày nghỉ lễ.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+              <span>
+                Do you have English-speaking doctors or interpreters available?
+                <br />
+                <span style="font-size: 0.9em; opacity: 0.7; margin-top: 8px">
+                  Khoa có bác sĩ nói tiếng Anh hoặc phiên dịch viên không?
+                </span>
+              </span>
+              <i class="fas fa-plus icon"></i>
+            </div>
+            <div class="answer">
+              <p>
+                All of our doctors can speak English. However, we do not have
+                interpreters available. Clients who cannot speak English are
+                required to have interpreters accompany them during their time
+                at the hospital.
+              </p>
+              <p style="font-size: 0.9em; opacity: 0.7; margin-top: 8px">
+                Hầu hết các bác sĩ của chúng tôi đều có thể nói tiếng Anh. Tuy
+                nhiên, chúng tôi không có thông dịch viên. Khách hàng không nói
+                được tiếng Anh được yêu cầu có phiên dịch viên đi cùng trong
+                toàn bộ thời gian ở bệnh viện.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-header" onclick="toggleSection(this)">
+          <span
+            >Services Available
+            <span style="font-size: 0.9em; opacity: 0.7"
+              >(Sản phẩm và dịch vụ)</span
+            >
+          </span>
+          <i class="fas fa-plus icon"></i>
+        </div>
+        <div class="section-content">
+          <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+              <span>What are the clinic's working hours?</span>
+              <i class="fas fa-plus icon"></i>
+            </div>
+            <div class="answer">
+              The clinic operates from 6:30 AM to 4:30 PM, Monday to Saturday.
+            </div>
+
+            <div class="question" onclick="toggleAnswer(this)">
+              <span>2. What are the clinic's working hours?</span>
+              <i class="fas fa-plus icon"></i>
+            </div>
+            <div class="answer">
+              The clinic operates from 6:30 AM to 4:30 PM, Monday to Saturday.
+            </div>
+          </div>
+        </div>
+
+        <div class="section-header" onclick="toggleSection(this)">
+          <span
+            >Prices and Payment
+            <span style="font-size: 0.9em; opacity: 0.7"
+              >(Chi phí và thanh toán)</span
+            >
+          </span>
+          <i class="fas fa-plus icon"></i>
+        </div>
+        <div class="section-content">
+          <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+              <span>
+                How much does a consultation typically cost? <br />
+                <span style="font-size: 0.9em; opacity: 0.7">
+                  Chi phí khám bệnh thông thường là bao nhiêu?
+                </span>
+              </span>
+              <i class="fas fa-plus icon"></i>
+            </div>
+            <div class="answer">
+              Examination fee is 450.000 VND.<br />
+              <span style="font-size: 0.9em; opacity: 0.7">
+                Một phiếu khám có giá 450.000 VND.
+              </span>
+            </div>
+
+            <div class="question" onclick="toggleAnswer(this)">
+              <span>
+                What payment methods are accepted? Can I pay with a credit card
+                or foreign currency? <br />
+                <span style="font-size: 0.9em; opacity: 0.7">
+                  Khoa chấp nhận những phương thức thanh toán nào? Tôi có thể
+                  thanh toán bằng thẻ tín dụng hoặc ngoại tệ không?
+                </span>
+              </span>
+              <i class="fas fa-plus icon"></i>
+            </div>
+            <div class="answer">
+              The clinic operates from 6:30 AM to 4:30 PM, Monday to Saturday.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleSection(header) {
+        let content = header.nextElementSibling;
+        let icon = header.querySelector(".icon");
+        content.style.display =
+          content.style.display === "block" ? "none" : "block";
+        icon.classList.toggle("fa-plus");
+        icon.classList.toggle("fa-minus");
+      }
+
+      function toggleAnswer(question) {
+        let answer = question.nextElementSibling;
+        let icon = question.querySelector(".icon");
+        answer.style.display =
+          answer.style.display === "block" ? "none" : "block";
+        icon.classList.toggle("fa-plus");
+        icon.classList.toggle("fa-minus");
+      }
+
+      function filterQuestions() {
+        let input = document.getElementById("search").value.toLowerCase();
+        let questions = document.querySelectorAll(".question");
+        questions.forEach((q) => {
+          let text = q.innerText.toLowerCase();
+          let faqItem = q.parentElement;
+          faqItem.style.display = text.includes(input) ? "block" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>
